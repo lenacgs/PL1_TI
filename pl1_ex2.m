@@ -1,6 +1,4 @@
 function [n] = pl1_ex2(fonte, alfabeto)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
 
 fonte(fonte==0) = [];
 n = 0;
