@@ -1,7 +1,7 @@
 function [alfabeto] = pl1_ex3(fonte)
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
-disp('funcao histograma')
+disp('Funcao Histograma')
 [filepath,name,ext] = fileparts(fonte);
 
 %caso seja ficheiro de audio (de 0 a 1)
@@ -35,7 +35,7 @@ elseif(ext=='.bmp')
     
 %caso seja um texto
 elseif(ext== '.txt')
-    alfabeto = ['A':'Z','a':'z']
+    alfabeto = ['A':'Z','a':'z'];
     fonte = fileread(fonte); 
     array = [];
     fontefinal = [];
