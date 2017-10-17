@@ -1,16 +1,23 @@
-function [n] = pl1_ex2(fonte, alfabeto)
+%finished
 
-fonte(fonte==0) = [];
-n = 0;
-for i=1:(numel(alfabeto)-1)
-    disp(alfabeto(i))
-    prob = sum(fonte==alfabeto(i))/numel(fonte);
-    disp(sum(fonte==alfabeto(i)))
-    disp(prob)
-    n = n - (prob * log2(prob));
+function [entropy] = pl1_ex2(fonte)
+
+[filepath,name,ext] = fileparts(fonte);
+
+if (ext=='.wav')
+    [fonte, Fs] = audioread(fonte);
+elseif(ext=='.bmp')
+    fonte = imread(fonte);
+elseif(ext== '.txt')
+    fonteca = fileread(fonte);
+    fonte = [];
+    for i=1:numel(fonteca) 
+        fonte(i) = fonteca(i)+0;
+    end
 end
+[freq] = histcounts(fonte);
+freq(freq==0) = [];
 
-disp('Entropia: ')
-disp(n)
+entropy = - sum((freq./sum(freq)) .* log2(freq./sum(freq)));
 end
 
