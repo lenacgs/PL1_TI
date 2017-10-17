@@ -12,12 +12,12 @@ if (ext=='.wav')
     bits = 2.^bits;
     delta = 2/bits;
     alfabeto = (-1:delta:1-delta);
-    display(alfabeto)
+    display(alfabeto);
     
     %x = histcounts(fontefinal, alfabeto);
     %bar(x)
     pl1_ex1(fontefinal, alfabeto)
-    xlim(alfabeto)
+    pl1_ex2(fontefinal, alfabeto)
     
 %caso seja uma imagem (de 0 a 255)
 elseif(ext=='.bmp')
@@ -26,14 +26,14 @@ elseif(ext=='.bmp')
     bits = info.BitDepth;
     bits =2.^bits;
     alfabeto = (1:bits);
-    display(alfabeto)
+    display(alfabeto);
     
     figure()
     
     %x = histcounts(fontefinal, alfabeto)
     %bar(x)
     pl1_ex1(fontefinal, alfabeto)
-    xlim(alfabeto)
+    pl1_ex2(fontefinal, alfabeto)
     
 %caso seja um texto
 elseif(ext== '.txt')
@@ -53,6 +53,7 @@ elseif(ext== '.txt')
     %x = histcounts(fontefinal, array(:))
     %bar(x)
     pl1_ex1(fontefinal, array(:))
+    pl1_ex2(fontefinal, alfabeto)
     
 end
 

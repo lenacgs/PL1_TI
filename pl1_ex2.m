@@ -10,5 +10,7 @@ for i=1:(numel(alfabeto)-1)
     n = n - (prob * log2(prob));
 end
 
+disp('Entropia: ')
+disp(n)
 end
 
