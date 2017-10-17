@@ -17,6 +17,7 @@ if (ext=='.wav')
     %x = histcounts(fontefinal, alfabeto);
     %bar(x)
     pl1_ex1(fontefinal, alfabeto)
+    xlim(alfabeto)
     
 %caso seja uma imagem (de 0 a 255)
 elseif(ext=='.bmp')
@@ -32,6 +33,7 @@ elseif(ext=='.bmp')
     %x = histcounts(fontefinal, alfabeto)
     %bar(x)
     pl1_ex1(fontefinal, alfabeto)
+    xlim(alfabeto)
     
 %caso seja um texto
 elseif(ext== '.txt')
