@@ -24,9 +24,7 @@ f = fonte;
 %f = readfonte(fonte);
 %tornar a fonte numa string
 f2 = strjoin(string(f));
-disp(f2);
 f3 = strrep(f2,' ','');
-disp(f3);
 %percorrer a string e ver qual o numero de ocorr?ncias de cada s?mbolo do
 %novo alfabeto
 freq = zeros(numel(newalphabet), 1);
@@ -34,8 +32,6 @@ freq = zeros(numel(newalphabet), 1);
 for n = 1:numel(newalphabet)
     freq(n) = count(f3, newalphabet(n));
 end
-
-disp(freq);
 
 %numero medio de bits por s?mbolo
 prob = freq./sum(freq);
@@ -46,8 +42,6 @@ disp ('Numero medio de bits por simbolo:');
 disp(x);
 
 newalphabet = str2double(newalphabet);
-disp(newalphabet);
-disp (fonte);
 
 bar(newalphabet, freq);
 
