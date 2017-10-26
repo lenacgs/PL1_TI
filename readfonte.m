@@ -1,3 +1,5 @@
+%devolve f: a fonte j? lida
+
 function f = readfonte(fonte)
 [filepath,name,ext] = fileparts(fonte);
 

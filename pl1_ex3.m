@@ -35,20 +35,19 @@ elseif(ext=='.bmp')
 elseif(ext== '.txt')
     alfabeto = ['A':'Z','a':'z'];
     fonteaux = fileread(fonte); 
-    array = [];
-    fontefinal = [];
+    alfabetof = zeros(numel(alfabeto));
+    fontefinal = zeros(numel(fonteaux));
     for i=1:numel(fonteaux) 
         fontefinal(i) = fonteaux(i)+0;
     end
-    
+     
     for i=1:numel(alfabeto) 
-        array(i) = alfabeto(i)+0;
+        alfabetof(i) = alfabeto(i)+0;
     end
     
-    %disp(array)
-    %x = histcounts(fontefinal, array(:))
-    %bar(x)
-    pl1_ex1(fontefinal, array(:));
+    alfabetoc = sort(alfabetof(:));
+    
+    pl1_ex1(fontefinal, alfabetoc);
     pl1_ex2(fonte);
 
 end
