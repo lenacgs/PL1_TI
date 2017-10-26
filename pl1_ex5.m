@@ -3,25 +3,22 @@
 
 function pl1_ex5(fonte)
 
-alfabeto = [1 2 3 4 5 6 7 8 9];
-%alfabeto = pl1_ex3(fonte);
 %agrupar simbolos do alfabeto 2 a 2:
 %percorrer a matriz do alfabeto 2 vezes, e concatenar numa matriz de
 % strings os s?mbolos 2 a 2.
-m = 1;
-dim = numel(alfabeto)^2;
-newalphabet = strings(dim, 1);
-
-for i = 1:numel(alfabeto)
-    for j = 1:numel(alfabeto)
-        a = mat2str(alfabeto(i));
-        b = mat2str(alfabeto(j));
-        newalphabet(m) = strcat(a, b);
-        m = m + 1;
-    end
+f = readfonte(fonte);
+%disp(f);
+alph = strings(numel(f)/2, 1);
+j = 1;
+for i = 1:2:numel(f)
+    a = mat2str(f(i));
+    b = mat2str(f(i+1));
+    alph(j) = strcat(a,b);
+    j = j + 1;
 end
-f = fonte;
-%f = readfonte(fonte);
+
+newalphabet = unique(alph);
+
 %tornar a fonte numa string
 f2 = strjoin(string(f));
 f3 = strrep(f2,' ','');
@@ -41,9 +38,10 @@ x = sum(HL) ./ numel(HL);
 disp ('Numero medio de bits por simbolo:');
 disp(x);
 
-newalphabet = str2double(newalphabet);
 
-bar(newalphabet, freq);
+%histograma nao esta a funcionar mas acho que nao e preciso anyway
+%newalphabetint = str2double(newalphabet);
+%bar(newalphabetint, freq);
 
 end
 
