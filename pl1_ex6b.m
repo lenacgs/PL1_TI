@@ -18,6 +18,13 @@ tam = length(target01) - length(query) +1;
 
 ocurrs_query = histc(query, alf);
 probs_query = ocurrs_query / sum(ocurrs_query);
+%disp('alf')
+%length(alf)
+%disp('query')
+%length(query)
+%disp('probs_query')
+%length(probs_query)
+%pause
 
 for i=1:step:tam
     janela = target01(i:(i+length(query)-1));
@@ -28,6 +35,14 @@ for i=1:step:tam
     
     for j=1:length(query)
         matriz(find(alf == query(j)), find(alf == janela(j))) = matriz(find(alf == query(j)), find(alf == janela(j))) + 1;
+        %disp('para o query')
+        %query(j)
+        %a = find(alf == query(j))
+        %disp('para a janela')
+        %janela(j)
+        %b = find(alf == janela(j))
+        %matriz(a, b)
+        %pause
     end
     
     valor = 0;
@@ -39,10 +54,10 @@ for i=1:step:tam
         if (linha == 0)
             linha = 256;
         end
-        pxy = matriz(linha, coluna) /length(query);
+        pxy = matriz(linha, coluna) /(length(query)*length(query)); %por quanto e que se deve dividir?
         ind_query = (query == alf(linha));
         ind_janela = (janela == alf(coluna));
-        valor = valor + pxy * log2(pxy/ (probs_query(linha)*probs_janela(coluna)));
+        valor = valor + pxy * log2(pxy/ (probs_query(linha-1)*probs_janela(coluna-1)));
     end
     I(i) = valor;
     
