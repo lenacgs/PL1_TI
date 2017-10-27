@@ -1,6 +1,5 @@
 function [fonte, freq, nBits, alf] = infoSom(nome)
-%UNTITLED4 Summary of this function goes here
-%   Detailed explanation goes here
+
 [fonte, freq] = audioread(nome);
 info = audioinfo(nome);
 nBits = info.BitsPerSample;

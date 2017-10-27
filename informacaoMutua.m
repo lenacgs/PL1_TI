@@ -1,6 +1,4 @@
 function [ I ] = informacaoMutua(query, target, step, alf)
-%UNTITLED5 Summary of this function goes here
-%   Detailed explanation goes here
 
 tam = length(target) - length(query) +1;
 
@@ -8,7 +6,7 @@ ocurrs_query = histc(query, alf);
 probs_query = ocurrs_query / sum(ocurrs_query);
 
 for i=1:step:tam
-    janela = target(i:(i+length(query)-1))
+    janela = target(i:(i+length(query)-1));
     ocurrs_janela = histc(janela, alf);
     probs_janela = ocurrs_janela / sum(ocurrs_janela);
     
@@ -18,10 +16,9 @@ for i=1:step:tam
         matriz(query(j)+1, janela(j)+1) = matriz(query(j)+1, janela(j)+1) + 1;
     end
     
-    disp(matriz);
     valor = 0;
     ind_nao_zeros = find(matriz);
-    %disp(ind_nao_zeros);
+    
     for k=1:length(ind_nao_zeros);
         linha = mod(ind_nao_zeros(k), length(alf));
         coluna = ceil(ind_nao_zeros(k) / length(alf));
