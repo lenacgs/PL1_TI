@@ -1,4 +1,4 @@
-function [infoMutua] = infoMutua(alf, query, target)
+function [infoMutua] = infoMutuaSom(alf, query, target)
 
 freqs = zeros(numel(alf), numel(alf));
 step = numel(query)/4;
