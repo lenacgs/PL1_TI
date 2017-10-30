@@ -14,10 +14,10 @@ end
 
 pxy = freqs ./ numel(freqs);
 pxy = pxy(pxy~=0);
-fx = histcounts(target);
+fx = histcounts(target, alf);
 px = fx ./ numel(target);
 
-fy = histcounts(query);
+fy = histcounts(query, alf);
 py = fy ./ numel(query);
 a = px.*py;
 
