@@ -12,7 +12,7 @@ for n = 1:numel(newalphabet)
     freq(n) = count(f3, newalphabet(n));
 end
 
-freq = freq(freq~=0);
+disp(freq./sum(freq) .* log2();
 x = - sum((freq./sum(freq)) .* log2(freq./sum(freq)));
 % prob = freq./sum(freq);
 % %x = - sum(prob .* log2(prob));
