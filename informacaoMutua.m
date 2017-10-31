@@ -19,7 +19,7 @@ for i=1:step:tam
     valor = 0;
     ind_nao_zeros = find(matriz);
     
-    for k=1:length(ind_nao_zeros);
+    for k=1:length(ind_nao_zeros)
         linha = mod(ind_nao_zeros(k), length(alf));
         coluna = ceil(ind_nao_zeros(k) / length(alf));
         if (linha == 0)
@@ -30,18 +30,5 @@ for i=1:step:tam
     end
     I(i) = valor;
 end
-
-     
-    %valor = 0;
-    %for m=1:length(alf)
-    %    for n=1:length(alf)
-    %        if (matriz(m, n) ~= 0)
-    %            pxy = matriz(m, n) / length(query);
-    %            px = probs_query(m);
-    %            py = probs_janela(n);
-    %            valor = valor + pxy * log2(pxy/(px*py));
-    %        end
-    %    end 
-    %end
     
  

@@ -1,6 +1,5 @@
 function  pl1_ex6c()
 
-%alfabetos sao iguais
 [query, ~, ~, alf] = infoSom('guitarSolo.wav');
 [target1, ~, ~, ~] = infoSom('Song01.wav');
 [target2, ~, ~, ~] = infoSom('Song02.wav');

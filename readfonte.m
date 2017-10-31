@@ -7,6 +7,7 @@ if (ext=='.wav')
     bits = 2^bits;
     delta = 2/bits;
     alfabeto = (-1:delta:1-delta);
+    
 elseif(ext=='.bmp')
     f = imread(fonte);
     info = imfinfo(fonte);

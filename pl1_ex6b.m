@@ -1,9 +1,8 @@
-function pl1_ex6b
+function pl1_ex6b()
 
 [query, ~, ~, alf] = infoSom('guitarSolo.wav');
 [target01, ~, ~, ~] = infoSom('target01 - repeat.wav');
 [target02, ~, ~, ~] = infoSom('target02 - repeatNoise.wav');
-
 
 i1 = infoMutuaSom(alf, query, target01);
 subplot(2,1,1);

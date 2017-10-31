@@ -1,3 +1,6 @@
+%alguma coisa esta mal neste exercicio, os valores de entropia sao
+%superiores a sem agrupamento de simbolos
+
 function pl1_ex5(fonte)
 
 [~, ~, ext] = fileparts(fonte);
@@ -13,14 +16,11 @@ for n = 1:numel(newalphabet)
 end
 
 freq = freq(freq~=0);
-x = - sum((freq./sum(freq)) .* log2(freq./sum(freq)));
-% prob = freq./sum(freq);
-% %x = - sum(prob .* log2(prob));
-% HL = hufflen(prob);
-% HL = HL.*prob;
-% x = sum(HL) ./ numel(HL);
+prob = freq./sum(freq);
+x = - sum(prob .* log2(prob));
+
 disp ('Numero medio de bits por simbolo:');
-disp(x);
+disp(x/2);
 
 end
 
