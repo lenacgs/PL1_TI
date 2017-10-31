@@ -82,7 +82,7 @@ max7 = max(i7(:));
 
 maxs = [max1 max2 max3 max4 max5 max6 max7];
 maxs = sort(maxs, 'descend');
-disp('mutual information in descending order');
+disp('mutual information maximums in descending order');
 disp(maxs);
 
 
