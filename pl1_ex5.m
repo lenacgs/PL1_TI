@@ -4,7 +4,7 @@
 function pl1_ex5(fonte)
 
 [~, ~, ext] = fileparts(fonte);
-[~, f] = readFonte(fonte, ext);
+[~, f] = readfonte(fonte, ext);
 
 newalphabet = groupSymbols(f);
 

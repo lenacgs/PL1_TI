@@ -1,7 +1,7 @@
 function pl1_ex4(fonte)
 
 [~, ~, ext] = fileparts(fonte);
-[alf, f] = readFonte(fonte, ext);
+[alf, f] = readfonte(fonte, ext);
 
 freq = zeros(numel(alf),1);
 for i = 1:numel(alf)
