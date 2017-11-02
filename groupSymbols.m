@@ -1,8 +1,10 @@
 function newalphabet = groupSymbols(fonte)
-alph = strings(numel(fonte)/2, 1);
+alph = strings(round(numel(fonte)/2)+1, 1);
 j = 1;
 
-for i = 1:2:numel(fonte)
+alph(end) = fonte(end);
+
+for i = 1:2:(numel(fonte)-1)
     a = mat2str(fonte(i));
     b = mat2str(fonte(i+1));
     alph(j) = strcat(a,b);

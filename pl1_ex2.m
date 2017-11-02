@@ -1,7 +1,7 @@
 function pl1_ex2(fonte)
 
 [~, ~, ext] = fileparts(fonte);
-[~, f] = readfonte(fonte, ext);
+[~, f] = readFonte(fonte, ext);
 
 E = entropy(f);
 disp('entropy: ');
